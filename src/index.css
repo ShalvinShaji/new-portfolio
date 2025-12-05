@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Dark Mode Palette */
+  --bg-primary: #111111; /* Color 1: Background */
+  --bg-secondary: #111111; /* Same as primary */
+  --text-primary: #cccccc; /* Color 2: Dull White */
+  --text-secondary: #cccccc; /* Same as primary */
+  --text-muted: #cccccc;   /* Same as primary */
+  --accent-color: #d0002f; /* Color 3: Crimson Red */
+  --accent-hover: #d0002f;
+  --card-bg: #111111;      /* Same as background */
+  --border-color: #cccccc; /* Use Text color for borders */
+  --card-shadow: none;     /* Minimalist */
+  
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Spacing */
+  --section-padding: 15vh 6vw; /* Radical Spacing - Luxury Feel */
+  --max-width: 1400px; /* Wider container */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.title-accent {
+  color: var(--accent-color);
+  font-size: 4rem; /* Bigger for the 'Me' or accented word */
+  font-weight: 800;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  padding: 0.875rem 2rem;
+  background-color: transparent;
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Header Removed */
+
+/* Hero */
+/* Hero - The Spine */
+.hero-spine-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Vertical Red Line */
+.the-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 25%; /* Asymmetric split */
+  width: 1px;
+  background-color: var(--accent-color);
+  z-index: 10;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.the-spine.grow {
+  transform: scaleY(1);
+}
+
+/* Zone TL: Socials */
+.spine-zone-tl {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.spine-socials-tl {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Zone BL: Massive Name */
+.spine-name-wrapper {
+  position: absolute;
+  bottom: 10vh;
+  left: 5vw;
+  z-index: 20;
+}
+
+.spine-name {
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 25vw, 20rem);
+  line-height: 0.8;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: -10px;
+  white-space: nowrap;
+  mix-blend-mode: exclusion; /* Cool interaction with the spine line */
+}
+
+/* Zone TR: Context */
+.spine-context {
+  position: absolute;
+  top: 30vh;
+  right: 10vw;
+  text-align: right;
+  max-width: 400px;
+}
+
+.spine-greeting {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.spine-tagline {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+
+.spine-icon {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  transition: all 0.3s;
+}
+
+.spine-icon:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Responsive Spine */
+@media (max-width: 768px) {
+  .the-spine {
+    left: 10%;
+  }
+  .spine-name {
+    font-size: 18vw;
+    letter-spacing: -5px;
+  }
+  .spine-context {
+    top: 20vh;
+    right: 5vw;
+  }
+  .spine-zone-tl {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+}
+
+/* About - The Dossier */
+.dossier-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 6rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Left Column: Stats */
+.dossier-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Right Column: Narrative */
+.dossier-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dossier-narrative p {
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.dossier-narrative p:first-child::first-letter {
+  font-size: 4rem;
+  float: left;
+  line-height: 0.8;
+  margin-right: 1rem;
+  color: var(--accent-color);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Responsive Dossier */
+@media (max-width: 768px) {
+  .dossier-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Skills */
+.skills-section {
+  background-color: var(--bg-secondary);
+}
+
+/* Skills - The Spec Sheet */
+/* Skills - The Data Stream */
+.data-stream-container {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.terminal-header {
+  font-family: monospace;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.terminal-prompt {
+  color: var(--text-secondary);
+}
+
+.terminal-cmd {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.stream-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.stream-category-title {
+  font-family: monospace;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.stream-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.data-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.data-chip:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.chip-prefix {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.data-chip:hover .chip-prefix {
+  color: white;
+}
+
+.chip-val {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* Responsive Stream */
+@media (max-width: 1024px) {
+  .stream-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stream-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .terminal-header {
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* Projects - Editorial Rows */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  cursor: none; /* Keep custom cursor */
+}
+
+.project-row:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-row:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding-left: 2vw; /* Subtle shift */
+  padding-right: 2vw;
+}
+
+.project-info-left {
+  flex: 1;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 3rem; /* Massive title */
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.project-row:hover .project-title {
+  color: var(--accent-color);
+}
+
+.project-info-right {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-desc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Links minimal */
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.text-link {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--text-primary);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.text-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--accent-color);
+  transition: width 0.3s;
+}
+
+.text-link:hover {
+  color: var(--accent-color);
+}
+
+.text-link:hover::after {
+  width: 100%;
+}
+
+/* Remove old card styles */
+.tag {
+   font-size: 0.8rem;
+   color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+  background-color: transparent;
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.heart {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* Responsive Design System */
+
+/* Tablet & Smaller Desktop (max-width: 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 10vh 4vw;
+  }
+  
+  /* Hero Spine Adjustments */
+  .the-spine {
+    left: 20%;
+  }
+  .spine-name {
+    font-size: 15vw;
+  }
+  .spine-context {
+    top: 25vh;
+    right: 5vw;
+  }
+  
+  /* Projects Grid -> 2 Col */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 8vh 1.5rem;
+  }
+
+  /* General Typography */
+  .section-title {
+    font-size: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .title-accent {
+    font-size: 3rem;
+  }
+
+  /* HERO - THE SPINE (Mobile Reset) */
+  .hero-spine-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6rem 1.5rem;
+    text-align: left;
+  }
+  
+  .the-spine {
+    display: none; /* Remove spine on mobile for cleaner look */
+  }
+
+  .spine-zone-tl {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 2rem;
+  }
+
+  .spine-name-wrapper {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-bottom: 1rem;
+  }
+
+  .spine-name {
+    font-size: 18vw; /* Massive width filler */
+    line-height: 0.9;
+    letter-spacing: -2px;
+    white-space: normal; /* Allow wrap if really needed, but mostly fit */
+  }
+
+  .spine-context {
+    position: relative;
+    top: auto;
+    right: auto;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  /* ABOUT - THE DOSSIER (Stacking) */
+  .dossier-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .stat-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 1rem;
+  }
+
+  .dossier-narrative p {
+    font-size: 1.1rem;
+  }
+  
+  /* Reset Drop Cap for Mobile */
+  .dossier-narrative p:first-child::first-letter {
+    float: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-right: 0;
+    color: var(--accent-color);
+  }
+
+  /* SKILLS - SPEC SHEET (Stacking) */
+  .specs-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* PROJECTS - EDITORIAL ROW (Mobile) */
+  .project-row {
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 1.5rem;
+  }
+  
+  .project-info-right {
+    max-width: 100%;
+  }
+  
+  .project-title {
+    font-size: 2.5rem;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .spine-name {
+    font-size: 20vw;
+  }
+  .spine-greeting {
+    font-size: 1.5rem;
+  }
+  .about-title-big {
+    font-size: 3.5rem;
+  }
+  .spec-header {
+    font-size: 0.9rem;
+  }
+}
+
+/* Hide Cursor on Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot, .cursor-outline {
+    display: none;
+  }
+  body, a, button {
+    cursor: auto;
+  }
+}
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference; /* Visibility on all backgrounds */
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-color);
+  transition: transform 0.2s;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+/* Hover State */
+.cursor-outline.hover {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: transparent;
+}
+
+.cursor-dot.hover {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Hide default cursor only when custom cursor is active (usually desktop) */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, .project-row, .spec-item {
+    cursor: none; /* Ensure system cursor is hidden on interactive elements too */
+  }
+}
