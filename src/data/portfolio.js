@@ -27,13 +27,13 @@ export const portfolioData = {
   },
   experience: [
     {
-      company: "Cognizant",
+      company: "Cognizant Technology Solutions",
       role: "Senior Data Engineer",
       period: "Feb 2026 - Present",
       description: "Leading cloud migration initiatives and architecting next-gen data lakes."
     },
     {
-      company: "Tata Consultancy Services (TCS)",
+      company: "Tata Consultancy Services",
       role: "Data Engineer",
       period: "Sep 2022 - Feb 2026",
       description: "Developed and optimized ETL pipelines processing terabytes of data daily."
