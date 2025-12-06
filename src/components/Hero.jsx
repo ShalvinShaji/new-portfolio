@@ -12,6 +12,13 @@ const Hero = () => {
       {/* The Spine: Vertical Axis */}
       <div className={`the-spine ${isVisible ? 'grow' : ''}`}></div>
 
+      {/* 3D Background Elements (Floating Glass Orbs) */}
+      <div className="hero-3d-bg">
+        <div className="hero-bubble bubble-1"></div>
+        <div className="hero-bubble bubble-2"></div>
+        <div className="hero-bubble bubble-3"></div>
+      </div>
+
       {/* Zone 1: Top Left - Socials */}
       <div className="spine-zone-tl">
         <div className="spine-socials-tl">

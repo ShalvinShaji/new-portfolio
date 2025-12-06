@@ -217,24 +217,71 @@ ul {
   transform: translateY(-3px);
 }
 
-/* Responsive Spine */
-@media (max-width: 768px) {
-  .the-spine {
-    left: 10%;
+/* Floating Glass Orbs (Bubbles) */
+.hero-3d-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* Low z-index */
+  overflow: hidden;
+}
+
+.hero-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 70%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(2px);
+  animation: float-bubble 10s ease-in-out infinite;
+}
+
+.bubble-1 {
+  width: 15rem;
+  height: 15rem;
+  top: 10%;
+  right: -5%;
+  animation-duration: 12s;
+  opacity: 0.6;
+}
+
+.bubble-2 {
+  width: 8rem;
+  height: 8rem;
+  bottom: 15%;
+  left: 5%;
+  animation-duration: 15s;
+  animation-delay: 1s;
+  opacity: 0.5;
+}
+
+.bubble-3 {
+  width: 4rem;
+  height: 4rem;
+  top: 40%;
+  right: 20%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+  opacity: 0.3;
+}
+
+@keyframes float-bubble {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
   }
-  .spine-name {
-    font-size: 18vw;
-    letter-spacing: -5px;
+  33% {
+    transform: translateY(-20px) translateX(10px);
   }
-  .spine-context {
-    top: 20vh;
-    right: 5vw;
-  }
-  .spine-zone-tl {
-    top: 1.5rem;
-    left: 1.5rem;
+  66% {
+    transform: translateY(10px) translateX(-5px);
   }
 }
+
+/* Responsive Spine & Bubbles */
+/* Responsive Bubbles moved to bottom */
 
 /* About - The Dossier */
 .dossier-container {
