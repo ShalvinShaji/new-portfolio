@@ -10,31 +10,27 @@ const Skills = () => {
     <section id="skills" className="section skills-section" ref={ref}>
       <div className="container">
         <div className={`section-title-wrapper reveal-text ${isVisible ? 'visible' : ''}`}>
-          <span className="title-first">System</span>
-          <span className="title-second">Capabilities</span>
+          <span className="title-first">Tech</span>
+          <span className="title-second">Stack</span>
         </div>
         
-        <div className="data-stream-container">
-          <div className="terminal-header">
-            <span className="terminal-prompt">root@shalvin:~/skills$</span>
-            <span className="terminal-cmd">execute_query --all</span>
-          </div>
-
-          <div className="stream-grid">
-             {Object.entries(skills).map(([category, items], catIndex) => (
-                <div key={category} className={`stream-category reveal-text stagger-${catIndex + 1} ${isVisible ? 'visible' : ''}`}>
-                  <h3 className="stream-category-title">{`// ${category.toUpperCase()}_MODULE`}</h3>
-                  <div className="stream-chips">
+        <div className="skills-container-row">
+           {Object.entries(skills).map(([category, items], catIndex) => (
+              <div key={category} className={`skill-row reveal-text stagger-${catIndex + 1} ${isVisible ? 'visible' : ''}`}>
+                <div className="skill-left">
+                  <h3 className="skill-category-title">
+                    {`[0${catIndex + 1}] ${category.toUpperCase().replace('_', ' ')}`}
+                  </h3>
+                </div>
+                <div className="skill-right">
+                  <div className="skill-tags">
                     {items.map((skill, idx) => (
-                      <div key={idx} className="data-chip">
-                        <span className="chip-prefix">::</span>
-                        <span className="chip-val">{skill}</span>
-                      </div>
+                      <span key={idx} className="skill-tag">{skill}</span>
                     ))}
                   </div>
                 </div>
-             ))}
-          </div>
+              </div>
+           ))}
         </div>
       </div>
     </section>

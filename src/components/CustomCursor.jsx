@@ -27,7 +27,7 @@ const CustomCursor = () => {
     };
 
     const handleLinkHoverEvents = () => {
-      document.querySelectorAll('a, button, .project-row, .spec-item').forEach(el => {
+      document.querySelectorAll('a, button').forEach(el => {
         el.addEventListener('mouseover', () => {
           if (outlineRef.current) outlineRef.current.classList.add('hover');
           if (dotRef.current) dotRef.current.classList.add('hover');

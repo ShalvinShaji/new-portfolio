@@ -16,8 +16,8 @@ const About = () => {
     <section id="about" className="section about-section" ref={ref}>
       <div className="container">
         <div className={`section-title-wrapper reveal-text ${isVisible ? 'visible' : ''}`}>
-          <span className="title-first">About</span>
-          <span className="title-second">Me</span>
+          <span className="title-first">The</span>
+          <span className="title-second">Profile</span>
         </div>
         
         <div className="dossier-container">

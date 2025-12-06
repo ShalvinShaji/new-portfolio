@@ -11,8 +11,8 @@ const Experience = () => {
     <section id="experience" className="section experience-section" ref={ref}>
       <div className="container">
         <div className={`section-title-wrapper reveal-text ${isVisible ? 'visible' : ''}`}>
-          <span className="title-first">Career</span>
-          <span className="title-second">Log</span>
+          <span className="title-first">The</span>
+          <span className="title-second">Timeline</span>
         </div>
 
         <div className="career-log-container">

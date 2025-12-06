@@ -9,7 +9,7 @@ const Projects = () => {
     <section id="projects" className="section projects-section" ref={ref}>
       <div className="container">
         <div className={`section-title-wrapper reveal-text ${isVisible ? 'visible' : ''}`}>
-          <span className="title-first">My</span>
+          <span className="title-first">Selected</span>
           <span className="title-second">Works</span>
         </div>
         
