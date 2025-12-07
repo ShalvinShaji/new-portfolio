@@ -118,8 +118,7 @@ ul {
 
 /* Header Removed */
 
-/* Hero */
-/* Hero - The Spine */
+/* Hero Section - Constrain animations */
 .hero-spine-section {
   position: relative;
   height: 100vh;
@@ -130,81 +129,18 @@ ul {
   justify-content: center;
 }
 
-/* The Vertical Red Line */
-.the-spine {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 25%; /* Asymmetric split */
-  width: 1px;
-  background-color: var(--accent-color);
-  z-index: 10;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.the-spine.grow {
-  transform: scaleY(1);
-}
-
-/* Zone TL: Socials */
+/* Social Icons - Top Left */
 .spine-zone-tl {
   position: absolute;
   top: 3rem;
   left: 3rem;
+  z-index: 100;
 }
 
 .spine-socials-tl {
   display: flex;
   gap: 1.5rem;
 }
-
-/* Zone BL: Massive Name */
-.spine-name-wrapper {
-  position: absolute;
-  bottom: 10vh;
-  left: 5vw;
-  z-index: 20;
-}
-
-.spine-name {
-  font-family: var(--font-heading);
-  font-size: clamp(8rem, 25vw, 20rem);
-  line-height: 0.8;
-  font-weight: 800;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: -10px;
-  white-space: nowrap;
-  mix-blend-mode: exclusion; /* Cool interaction with the spine line */
-}
-
-/* Zone TR: Context */
-.spine-context {
-  position: absolute;
-  top: 30vh;
-  right: 10vw;
-  text-align: right;
-  max-width: 400px;
-}
-
-.spine-greeting {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  color: var(--accent-color);
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.spine-tagline {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
 
 .spine-icon {
   font-size: 1.25rem;
@@ -217,71 +153,60 @@ ul {
   transform: translateY(-3px);
 }
 
-/* Floating Glass Orbs (Bubbles) */
-.hero-3d-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1; /* Low z-index */
-  overflow: hidden;
+/* Centered Content Container */
+.hero-center-content {
+  text-align: left;
+  max-width: 1200px;
+  padding: 0 2rem;
+  z-index: 20;
+  position: relative;
 }
 
-.hero-bubble {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 70%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(2px);
-  animation: float-bubble 10s ease-in-out infinite;
+
+
+/* Greeting - Hey, I'm */
+.hero-greeting {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  text-align: left;
 }
 
-.bubble-1 {
-  width: 15rem;
-  height: 15rem;
-  top: 10%;
-  right: -5%;
-  animation-duration: 12s;
-  opacity: 0.6;
+/* Name - Center Stage */
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 15vw, 18rem);
+  line-height: 0.9;
+  font-weight: 900;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
-.bubble-2 {
-  width: 8rem;
-  height: 8rem;
-  bottom: 15%;
-  left: 5%;
-  animation-duration: 15s;
-  animation-delay: 1s;
-  opacity: 0.5;
+/* First letter of name in crimson red */
+.hero-name .first-letter {
+  color: var(--accent-color);
 }
 
-.bubble-3 {
-  width: 4rem;
-  height: 4rem;
-  top: 40%;
-  right: 20%;
-  animation-duration: 8s;
-  animation-delay: 2s;
-  opacity: 0.3;
+/* Tagline - Single Line Below Name */
+.hero-tagline {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  max-width: 900px;
+  margin: 0;
+  opacity: 0.85;
+  text-align: left;
 }
 
-@keyframes float-bubble {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  33% {
-    transform: translateY(-20px) translateX(10px);
-  }
-  66% {
-    transform: translateY(10px) translateX(-5px);
-  }
-}
 
-/* Responsive Spine & Bubbles */
-/* Responsive Bubbles moved to bottom */
 
 /* About - The Dossier */
 .dossier-container {
@@ -712,45 +637,35 @@ ul {
     font-size: 3rem;
   }
 
-  /* HERO - THE SPINE (Mobile Reset) */
+  /* HERO - Centered Layout (Mobile) */
   .hero-spine-section {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 6rem 1.5rem;
-    text-align: left;
-  }
-  
-  .the-spine {
-    display: none; /* Remove spine on mobile for cleaner look */
+    padding: 3rem 1.5rem;
   }
 
   .spine-zone-tl {
-    position: relative;
-    top: auto;
-    left: auto;
-    margin-bottom: 2rem;
+    top: 1.5rem;
+    left: 1.5rem;
   }
 
-  .spine-name-wrapper {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-bottom: 1rem;
+  .hero-center-content {
+    padding: 0 1rem;
   }
 
-  .spine-name {
-    font-size: 18vw; /* Massive width filler */
-    line-height: 0.9;
-    letter-spacing: -2px;
-    white-space: normal; /* Allow wrap if really needed, but mostly fit */
+  .hero-greeting {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
-  .spine-context {
-    position: relative;
-    top: auto;
-    right: auto;
-    text-align: left;
+  .hero-name {
+    font-size: clamp(2.5rem, 16vw, 5rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
     max-width: 100%;
   }
 

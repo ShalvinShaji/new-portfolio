@@ -9,17 +9,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero-spine-section" ref={ref}>
-      {/* The Spine: Vertical Axis */}
-      <div className={`the-spine ${isVisible ? 'grow' : ''}`}></div>
-
-      {/* 3D Background Elements (Floating Glass Orbs) */}
-      <div className="hero-3d-bg">
-        <div className="hero-bubble bubble-1"></div>
-        <div className="hero-bubble bubble-2"></div>
-        <div className="hero-bubble bubble-3"></div>
-      </div>
-
-      {/* Zone 1: Top Left - Socials */}
+      {/* Social Icons - Top Left */}
       <div className="spine-zone-tl">
         <div className="spine-socials-tl">
             <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="spine-icon"><FaLinkedinIn /></a>
@@ -28,15 +18,13 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Zone 2: Bottom Left - The Name (Crossing the line) */}
-      <div className={`spine-name-wrapper reveal-text ${isVisible ? 'visible' : ''}`}>
-        <h1 className="spine-name">{name}</h1>
-      </div>
-
-      {/* Zone 3: Top Right - Context */}
-      <div className={`spine-context reveal-text stagger-1 ${isVisible ? 'visible' : ''}`}>
-        <span className="spine-greeting">Data Engineer</span>
-        <p className="spine-tagline">{tagline}</p>
+      {/* Centered Content */}
+      <div className={`hero-center-content reveal-text ${isVisible ? 'visible' : ''}`}>
+        <div className="hero-greeting">Hey, I'm</div>
+        <h1 className="hero-name">
+          SHALV<span className="first-letter">I</span>N
+        </h1>
+        <p className="hero-tagline">A Data Engineer {tagline}</p>
       </div>
     </section>
   );

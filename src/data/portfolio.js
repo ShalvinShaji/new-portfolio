@@ -3,7 +3,7 @@ export const portfolioData = {
     name: "Shalvin",
     role: "Data Engineer",
     company: "Tata Consultancy Services",
-    tagline: "Architecting scalable data pipelines and transforming raw signals into actionable intelligence.",
+    tagline: "Building data infrastructure that scales with your ambitions.",
     bio: [
       "I am a results-driven Data Engineer specializing in building robust ETL pipelines, data warehousing, and cloud infrastructure.",
       "My expertise lies in orchestrating complex data workflows using Python, SQL, and AWS. I thrive on solving big data challenges, optimizing query performance, and ensuring data reliability to drive strategic decision-making."
