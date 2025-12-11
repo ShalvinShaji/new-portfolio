@@ -508,29 +508,30 @@ ul {
   font-weight: 500;
   transition: all 0.3s;
   
-  /* Chip Design */
+  /* Text Design */
   display: inline-block;
-  padding: 0.5rem 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  /* border-radius: 100px; */
-  background-color: rgba(255, 255, 255, 0.01);
+  padding: 0; /* Remove padding */
+  border: none;
+  background-color: transparent;
+  cursor: default; /* or text */
 }
 
 .skill-tag:hover {
-  border-color: var(--accent-color);
   color: var(--accent-color);
-  /* transform: translateY(-2px); */
-  background-color: rgba(255, 255, 255, 0.05);
+  /* font-style: italic; */
+  transform: translateX(5px); /* Subtle shift interaction */
 }
 
+/* Clean up row hover interference */
 .skill-row:hover .skill-tag {
-  color: white; /* Keep row hover effect but let tag hover override if specific */
-  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--text-primary); /* Default color unless tag itself is hovered */
+  opacity: 0.7; /* Dim non-hovered tags slightly? Or just leave them. Let's keep distinct. */
 }
 
+/* When specific tag is hovered */
 .skill-row:hover .skill-tag:hover {
-  border-color: var(--accent-color);
   color: var(--accent-color);
+  opacity: 1;
 }
 .skill-row:hover .skill-category-title {
   color: var(--accent-color);
