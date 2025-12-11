@@ -19,7 +19,7 @@ const Skills = () => {
               <div key={category} className={`skill-row reveal-text stagger-${catIndex + 1} ${isVisible ? 'visible' : ''}`}>
                 <div className="skill-left">
                   <h3 className="skill-category-title">
-                    {`[0${catIndex + 1}] ${category.toUpperCase().replace('_', ' ')}`}
+                    {`[${category.toUpperCase().replace('_', ' ')}]`}
                   </h3>
                 </div>
                 <div className="skill-right">

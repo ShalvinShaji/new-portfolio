@@ -16,9 +16,21 @@
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Fluid Font Sizes 
+     Scale: 1.25 (Major Third)
+     Viewport: 320px - 1400px
+  */
+  --fs-xs: clamp(0.75rem, 0.70rem + 0.25vw, 0.875rem);
+  --fs-sm: clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+  --fs-base: clamp(1rem, 0.93rem + 0.35vw, 1.25rem);
+  --fs-md: clamp(1.25rem, 1.12rem + 0.65vw, 1.75rem);
+  --fs-lg: clamp(1.56rem, 1.35rem + 1.05vw, 2.35rem);
+  --fs-xl: clamp(1.95rem, 1.62rem + 1.63vw, 3.15rem);
+  --fs-xxl: clamp(2.44rem, 1.94rem + 2.49vw, 4.30rem);
   
   /* Spacing */
-  --section-padding: 15vh 6vw; /* Radical Spacing - Luxury Feel */
+  --section-padding: clamp(4rem, 10vh, 15vh) clamp(1.5rem, 6vw, 6vw);
   --max-width: 1400px; /* Wider container */
 }
 
@@ -63,7 +75,7 @@ ul {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   margin-bottom: 3rem;
   color: var(--text-primary);
@@ -74,7 +86,7 @@ ul {
 
 .title-accent {
   color: var(--accent-color);
-  font-size: 4rem; /* Bigger for the 'Me' or accented word */
+  font-size: var(--fs-xxl); /* Bigger for the 'Me' or accented word */
   font-weight: 800;
 }
 
@@ -129,7 +141,8 @@ ul {
   justify-content: center;
 }
 
-/* Social Icons - Top Left */
+
+/* Logo - Top Left */
 .spine-zone-tl {
   position: absolute;
   top: 3rem;
@@ -137,10 +150,26 @@ ul {
   z-index: 100;
 }
 
-.spine-socials-tl {
+.hero-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Social Icons - Top Right */
+.spine-zone-tr {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  z-index: 100;
+}
+
+.spine-socials {
   display: flex;
   gap: 1.5rem;
 }
+
+
 
 .spine-icon {
   font-size: 1.25rem;
@@ -167,7 +196,7 @@ ul {
 /* Greeting - Hey, I'm */
 .hero-greeting {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: var(--fs-lg);
   font-weight: 400;
   color: var(--text-secondary);
   margin-bottom: 1rem;
@@ -195,7 +224,7 @@ ul {
 
 /* Tagline - Single Line Below Name */
 .hero-tagline {
-  font-size: 1.5rem;
+  font-size: var(--fs-md);
   color: var(--text-secondary);
   line-height: 1.8;
   font-weight: 300;
@@ -210,15 +239,28 @@ ul {
 
 /* About - The Dossier */
 .dossier-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 6rem;
-  /* Left Line Design */
+  display: flex;
+  flex-direction: column;
+  /* Left Line Design Maintained on Container */
   padding-left: 1rem;
   border-left: 1px solid rgba(255, 255, 255, 0.05);
   border-top: none;
   padding-top: 1rem;
 }
+
+.dossier-entry {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 6rem;
+  
+  /* Restored Section Bottom Line */
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 2rem;
+}
+
+/* Removed hover effects from .dossier-entry */
 
 /* Left Column: Stats */
 .dossier-stats {
@@ -231,18 +273,28 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  
+  /* Interactive Stats Rows */
+  padding: 1rem 0; /* Reduced padding slightly since no border */
+  transition: all 0.3s ease;
+  border-bottom: none; /* Removed individual lines */
+}
+
+.stat-row:hover {
+  background-color: rgba(255, 255, 255, 0.01);
+  padding-left: 1rem;
 }
 
 .stat-label {
   font-family: monospace;
-  font-size: 0.9rem;
+  font-size: var(--fs-xs);
   color: var(--accent-color);
   letter-spacing: 1px;
 }
 
 .stat-value {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: var(--fs-md);
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -255,14 +307,14 @@ ul {
 }
 
 .dossier-narrative p {
-  font-size: 1.35rem;
+  font-size: var(--fs-base);
   line-height: 1.7;
   color: var(--text-secondary);
   font-weight: 300;
 }
 
 .dossier-narrative p:first-child::first-letter {
-  font-size: 4rem;
+  font-size: var(--fs-xxl);
   float: left;
   line-height: 0.8;
   margin-right: 1rem;
@@ -273,7 +325,7 @@ ul {
 
 /* Responsive Dossier */
 @media (max-width: 768px) {
-  .dossier-container {
+  .dossier-entry {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
@@ -315,7 +367,7 @@ ul {
 
 .log-index {
   font-family: monospace;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   color: var(--text-secondary);
   opacity: 0.5;
   transition: all 0.3s;
@@ -344,13 +396,13 @@ ul {
 .log-period {
   font-family: monospace;
   color: var(--accent-color);
-  font-size: 0.9rem;
+  font-size: var(--fs-xs);
   letter-spacing: 1px;
 }
 
 .log-company {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: var(--fs-lg);
   color: var(--text-primary);
   font-weight: 700;
   transition: color 0.3s;
@@ -369,11 +421,10 @@ ul {
 }
 
 .log-role {
-  font-family: monospace;
-  font-size: 1.1rem;
-  color: white;
-  text-transform: uppercase;
+  font-size: var(--fs-base);
+  color: var(--text-secondary);
 }
+
 
 .log-desc {
   color: var(--text-secondary);
@@ -415,9 +466,10 @@ ul {
 
 .skill-row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stack vertically now */
+  gap: 1.5rem; /* Space between Title and Tags */
   align-items: flex-start;
-  padding: 4rem 0;
+  padding: 3rem 0; /* Slightly reduced padding */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
 }
@@ -428,19 +480,19 @@ ul {
 }
 
 .skill-left {
-  flex: 1;
+  width: 100%; /* Take full width */
 }
 
 .skill-category-title {
   font-family: monospace;
-  font-size: 1.5rem;
+  font-size: var(--fs-base);
   color: var(--accent-color);
   font-weight: 400;
   letter-spacing: 1px;
 }
 
 .skill-right {
-  flex: 2;
+  width: 100%; /* Take full width */
 }
 
 .skill-tags {
@@ -451,14 +503,37 @@ ul {
 
 .skill-tag {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: var(--fs-base);
   color: var(--text-primary);
-  font-weight: 600;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: all 0.3s;
+  
+  /* Chip Design */
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* border-radius: 100px; */
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.skill-tag:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  /* transform: translateY(-2px); */
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .skill-row:hover .skill-tag {
-  color: white;
+  color: white; /* Keep row hover effect but let tag hover override if specific */
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.skill-row:hover .skill-tag:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.skill-row:hover .skill-category-title {
+  color: var(--accent-color);
 }
 
 /* Responsive updates for new Skills Row */
@@ -508,7 +583,7 @@ ul {
 
 .project-title {
   font-family: var(--font-heading);
-  font-size: 3rem; /* Massive title */
+  font-size: var(--fs-xl); /* Massive title */
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1rem;
@@ -529,7 +604,7 @@ ul {
 
 .project-desc {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: var(--fs-base);
   line-height: 1.6;
 }
 
@@ -629,13 +704,8 @@ ul {
   }
 
   /* General Typography */
-  .section-title {
-    font-size: 2.5rem;
-    flex-wrap: wrap;
-  }
-  .title-accent {
-    font-size: 3rem;
-  }
+
+
 
   /* HERO - Centered Layout (Mobile) */
   .hero-spine-section {
@@ -647,14 +717,20 @@ ul {
     left: 1.5rem;
   }
 
+  .spine-zone-tr {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .hero-logo {
+    height: 40px;
+  }
+
   .hero-center-content {
     padding: 0 1rem;
   }
 
-  .hero-greeting {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
+
 
   .hero-name {
     font-size: clamp(2.5rem, 16vw, 5rem);
@@ -662,12 +738,7 @@ ul {
     letter-spacing: -0.03em;
   }
 
-  .hero-tagline {
-    font-size: 1rem;
-    line-height: 1.6;
-    padding: 0 0.5rem;
-    max-width: 100%;
-  }
+
 
   /* ABOUT - THE DOSSIER (Stacking) */
   .dossier-container {
@@ -683,9 +754,7 @@ ul {
     padding-bottom: 1rem;
   }
 
-  .dossier-narrative p {
-    font-size: 1.1rem;
-  }
+
   
   /* Reset Drop Cap for Mobile */
   .dossier-narrative p:first-child::first-letter {
@@ -713,9 +782,7 @@ ul {
     max-width: 100%;
   }
   
-  .project-title {
-    font-size: 2.5rem;
-  }
+
   
   /* Footer */
   .footer {
@@ -723,21 +790,7 @@ ul {
   }
 }
 
-/* Small Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-  .spine-name {
-    font-size: 20vw;
-  }
-  .spine-greeting {
-    font-size: 1.5rem;
-  }
-  .about-title-big {
-    font-size: 3.5rem;
-  }
-  .spec-header {
-    font-size: 0.9rem;
-  }
-}
+
 
 /* Hide Cursor on Touch Devices */
 @media (hover: none) and (pointer: coarse) {

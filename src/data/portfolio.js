@@ -15,13 +15,13 @@ export const portfolioData = {
     }
   },
   skills: {
-    data_eng: [
-      "Python", "SQL", "PostgreSQL", "MongoDB", "ETL Pipelines", "Big Data"
+    data_engineering: [
+      "Python","PySpark", "SQL", "PostgreSQL", "ETL Pipelines"
     ],
     infrastructure: [
-      "AWS Services", "Terraform", "Docker", "Git", "CI/CD"
+      "AWS Services", "Terraform", "Git"
     ],
-    web_dev: [
+    web_development: [
       "React", "Next JS", "Nodejs", "JavaScript"
     ]
   },

@@ -2,6 +2,7 @@ import React from 'react';
 import { portfolioData } from '../data/portfolio';
 import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
 import useScrollReveal from '../hooks/useScrollReveal';
+import logo from '../assets/logo.png';
 
 const Hero = () => {
   const { name, tagline, socialLinks } = portfolioData.personalInfo;
@@ -9,9 +10,14 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero-spine-section" ref={ref}>
-      {/* Social Icons - Top Left */}
+      {/* Logo - Top Left */}
       <div className="spine-zone-tl">
-        <div className="spine-socials-tl">
+        <img src={logo} alt="Logo" className="hero-logo" />
+      </div>
+
+      {/* Social Icons - Top Right */}
+      <div className="spine-zone-tr">
+        <div className="spine-socials">
             <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="spine-icon"><FaLinkedinIn /></a>
             <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="spine-icon"><FaGithub /></a>
             <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="spine-icon"><FaInstagram /></a>
@@ -26,6 +32,7 @@ const Hero = () => {
         </h1>
         <p className="hero-tagline">A Data Engineer {tagline}</p>
       </div>
+
     </section>
   );
 };

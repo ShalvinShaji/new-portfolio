@@ -21,21 +21,23 @@ const About = () => {
         </div>
         
         <div className="dossier-container">
-          {/* Left Column: The Stats */}
-          <div className={`dossier-stats reveal-text stagger-1 ${isVisible ? 'visible' : ''}`}>
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-row">
-                <span className="stat-label">[{String(index + 1).padStart(2, '0')}] {stat.label}</span>
-                <span className="stat-value">{stat.value}</span>
-              </div>
-            ))}
-          </div>
+          <div className="dossier-entry">
+            {/* Left Column: The Stats */}
+            <div className={`dossier-stats reveal-text stagger-1 ${isVisible ? 'visible' : ''}`}>
+              {stats.map((stat, index) => (
+                <div key={index} className="stat-row">
+                  <span className="stat-label">[{stat.label}]</span>
+                  <span className="stat-value">{stat.value}</span>
+                </div>
+              ))}
+            </div>
 
-          {/* Right Column: The Narrative */}
-          <div className={`dossier-narrative reveal-text stagger-2 ${isVisible ? 'visible' : ''}`}>
-            {bio.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+            {/* Right Column: The Narrative */}
+            <div className={`dossier-narrative reveal-text stagger-2 ${isVisible ? 'visible' : ''}`}>
+              {bio.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
