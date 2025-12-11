@@ -266,7 +266,7 @@ ul {
 .dossier-stats {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: .5rem;
 }
 
 .stat-row {
