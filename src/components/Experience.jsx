@@ -24,10 +24,7 @@ const Experience = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="log-marker-col">
-                   {/* <span className={`log-index ${hoveredIndex === index ? 'active' : ''}`}>
-                   {`[0${index + 1}]`}
-                 </span> */}
-                 <div className={`log-line ${index === experience.length - 1 ? 'last' : ''}`}></div>
+                  <div className={`log-line ${index === experience.length - 1 ? 'last' : ''}`}></div>
               </div>
               
               <div className="log-content">

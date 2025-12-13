@@ -9,7 +9,7 @@ const About = () => {
   const stats = [
     { label: "ROLE", value: role },
     { label: "CURRENTLY", value: company },
-    { label: "BASED IN", value: "India" }, // Adding location context
+    { label: "BASED IN", value: "India" },
   ];
 
   return (

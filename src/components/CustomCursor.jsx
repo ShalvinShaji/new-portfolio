@@ -5,7 +5,6 @@ const CustomCursor = () => {
   const outlineRef = useRef(null);
 
   useEffect(() => {
-    // Check if device is likely a desktop (mouse pointer)
     const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
     if (!isDesktop) return;
 
@@ -40,9 +39,8 @@ const CustomCursor = () => {
     };
 
     window.addEventListener('mousemove', moveCursor);
-    handleLinkHoverEvents(); // Init listeners
+    handleLinkHoverEvents();
     
-    // Re-run listeners on DOM changes (simple approach for SPA)
     const observer = new MutationObserver(handleLinkHoverEvents);
     observer.observe(document.body, { childList: true, subtree: true });
 
@@ -52,8 +50,7 @@ const CustomCursor = () => {
     };
   }, []);
 
-  // Only render on desktop to avoid touch confusion, handled via CSS hiding commonly
-  // But strictly returning null for structure safety
+
   return (
     <>
       <div className="cursor-dot" ref={dotRef}></div>
