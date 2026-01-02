@@ -1,6 +1,6 @@
 export const portfolioData = {
   personalInfo: {
-    name: "Shalvin",
+    name: "Shalvin Shaji",
     role: "Data Engineer",
     company: "Tata Consultancy Services",
     tagline: "Building data infrastructure that scales with your ambitions.",
@@ -73,6 +73,5 @@ export const portfolioData = {
         demo: "#"
       }
     }
-  ],
-  footerText: "© 2025. Designed and Developed by Me with ❤"
+  ]
 };

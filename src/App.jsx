@@ -7,13 +7,13 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-import CustomCursor from './components/CustomCursor';
+
 
 function App() {
   return (
-    <div className="app">
+    <div className="luxury-gradient min-h-screen relative overflow-x-hidden">
       <div className="noise-overlay"></div>
-      <CustomCursor />
+      <Header />
       <main>
         <Hero />
         <About />

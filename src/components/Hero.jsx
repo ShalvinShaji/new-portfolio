@@ -1,64 +1,68 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { portfolioData } from '../data/portfolio';
-import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
-import useScrollReveal from '../hooks/useScrollReveal';
-import logo from '../assets/logo.png';
 
-const Hero = () => {
-  const { name, tagline, socialLinks } = portfolioData.personalInfo;
-  const [ref, isVisible] = useScrollReveal();
-  const [showContent, setShowContent] = React.useState(false);
-
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 2200); 
-    return () => clearTimeout(timer);
-  }, []);
+const Hero = memo(() => {
+  const { name, socialLinks } = portfolioData.personalInfo;
 
   return (
-    <section id="hero" className="hero-spine-section" ref={ref}>
-      {/* Grid Background */}
-      <div className="hero-grid-overlay">
-        {[...Array(10)].map((_, i) => (
-          <div key={`v-${i}`} className="grid-line-vert" style={{ left: `${10 * (i + 1)}%`, animationDelay: `${i * 0.05}s` }}>
-            <div 
-              className="grid-beam"
-              style={{
-                animationDuration: `${3 + Math.random() * 5}s`,
-                animationDelay: `${Math.random() * 5}s`
-              }}
-            ></div>
+    <section 
+      id="hero" 
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden text-white" 
+    >
+      <div className="text-center z-10 flex flex-col justify-center items-center h-full w-full px-8 select-none">
+        {/* Massive Typography Name */}
+        <div className="flex flex-col items-center mb-6 w-full max-w-full overflow-hidden">
+          <h1 className="font-heading text-size-hero font-bold leading-[0.8] tracking-tighter m-0 uppercase whitespace-nowrap bg-gradient-to-br from-text-white via-text-white to-text-white/10 bg-clip-text text-transparent px-4 cursor-default animate-none">
+            {name}
+          </h1>
+        </div>
+
+        {/* Role Emphasis (Simplified) */}
+        <div className="flex flex-col items-center mb-10">
+          <h2 className="font-heading text-size-tiny font-light tracking-luxury text-text-white uppercase ">
+            DATA ENGINEER
+          </h2>
+        </div>
+
+        {/* Social Links (Simplified) */}
+        <div className="flex flex-col items-center">
+          <div className="flex justify-center items-center gap-6">
+            <a 
+              href={socialLinks.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className=" no-underline font-heading font-light text-size-nano tracking-link uppercase transition-all duration-300 text-crimson "
+              aria-label="LinkedIn Profile"
+            >
+              LinkedIn
+            </a>
+            <span className="text-border-main select-none" aria-hidden="true">·</span>
+            <a 
+              href={socialLinks.github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className=" no-underline font-heading font-light text-size-nano tracking-link uppercase transition-all duration-300 text-crimson "
+              aria-label="GitHub Profile"
+            >
+              GitHub
+            </a>
+            <span className="text-border-main select-none" aria-hidden="true">·</span>
+            <a 
+              href={socialLinks.instagram} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className=" no-underline font-heading font-light text-size-nano tracking-link uppercase transition-all duration-300 text-crimson "
+              aria-label="Instagram Profile"
+            >
+              Instagram
+            </a>
           </div>
-        ))}
+        </div>
       </div>
-
-      {/* Hero Content */}
-      {showContent && (
-        <>
-          <div className="spine-zone-tl">
-            <img src={logo} alt="Logo" className="hero-logo" />
-          </div>
-
-          <div className="spine-zone-tr">
-            <div className="spine-socials">
-                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="spine-icon"><FaLinkedinIn /></a>
-                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="spine-icon"><FaGithub /></a>
-                <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="spine-icon"><FaInstagram /></a>
-            </div>
-          </div>
-
-          <div className={`hero-center-content reveal-text ${isVisible ? 'visible' : ''}`}>
-            <div className="hero-greeting">Hey, I'm</div>
-            <h1 className="hero-name">
-              <span>S</span><span>H</span><span>A</span><span>L</span><span>V</span><span className="first-letter">I</span><span>N</span>
-            </h1>
-            <p className="hero-tagline">A Data Engineer {tagline}</p>
-          </div>
-        </>
-      )}
     </section>
   );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;
