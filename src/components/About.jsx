@@ -12,7 +12,7 @@ const About = memo(() => {
       <div className="max-w-[1400px] mx-auto px-8">
         <div className="relative mb-20 flex items-start group">
           {/* Background Numbering */}
-          <span className="absolute left-[-16px] top-[-24px] font-heading text-[7rem] md:text-[9rem] font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
+          <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
             01
           </span>
 

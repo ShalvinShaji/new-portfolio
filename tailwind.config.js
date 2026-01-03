@@ -36,13 +36,14 @@ export default {
       fontSize: {
         // --- Semantic Typography System ---
         'size-nano': 'clamp(0.75rem, 0.70rem + 0.25vw, 0.875rem)',   // Label/Mono
-        'size-tiny': 'clamp(0.875rem, 0.84rem + 0.18vw, 1rem)',      // Small text
-        'size-body': 'clamp(1rem, 0.93rem + 0.35vw, 1.25rem)',      // Paragraphs
-        'size-sub': 'clamp(1.25rem, 1.12rem + 0.65vw, 1.75rem)',     // Subheadings
-        'size-h3': 'clamp(1.56rem, 1.35rem + 1.05vw, 2.35rem)',      // Section headers
-        'size-h2': 'clamp(1.95rem, 1.62rem + 1.63vw, 3.15rem)',      // Large titles
-        'size-h1': 'clamp(2.44rem, 1.94rem + 2.49vw, 4.30rem)',      // Massive titles
-        'size-hero': 'clamp(2.5rem, 12vw, 13rem)',                      // Hero name
+        'size-tiny': 'clamp(0.81rem, 0.78rem + 0.15vw, 0.93rem)',      // Small text
+        'size-body': 'clamp(0.93rem, 0.88rem + 0.3vw, 1.15rem)',      // Paragraphs
+        'size-sub': 'clamp(1.15rem, 1.05rem + 0.5vw, 1.5rem)',       // Subheadings
+        'size-h3': 'clamp(1.4rem, 1.25rem + 0.8vw, 2.1rem)',         // Section headers
+        'size-h2': 'clamp(1.6rem, 1.4rem + 1.2vw, 2.8rem)',          // Large titles
+        'size-index': 'clamp(5rem, 15vw, 12rem)',                     // Background numbering
+        'size-h1': 'clamp(2.1rem, 1.8rem + 2.5vw, 4rem)',           // Massive titles
+        'size-hero': 'clamp(2.1rem, 11vw, 13rem)',                      // Hero name
       },
       spacing: {
         'section-y': 'clamp(4rem, 10vh, 15vh)',

@@ -38,7 +38,7 @@ const Header = memo(() => {
     >
       <div className="max-w-[1400px] mx-auto px-8 flex justify-start items-center">
         <a 
-          href="#hero" 
+          href="/" 
           className="font-heading text-2xl font-extrabold text-text-white uppercase tracking-[-0.05em] no-underline cursor-pointer hover:text-crimson transition-colors duration-300 flex items-center"
           aria-label="Back to top"
         >

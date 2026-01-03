@@ -12,14 +12,14 @@ const Hero = memo(() => {
       <div className="text-center z-10 flex flex-col justify-center items-center h-full w-full px-8 select-none">
         {/* Massive Typography Name */}
         <div className="flex flex-col items-center mb-6 w-full max-w-full overflow-hidden">
-          <h1 className="font-heading text-size-hero font-bold leading-[0.8] tracking-tighter m-0 uppercase whitespace-nowrap bg-gradient-to-br from-text-white via-text-white to-text-white/10 bg-clip-text text-transparent px-4 cursor-default animate-none">
+          <h1 className="font-heading text-size-hero font-bold leading-[0.8] tracking-tighter m-0 uppercase bg-gradient-to-br from-text-white via-text-white to-text-white/10 bg-clip-text text-transparent px-4 cursor-default animate-none">
             {name}
           </h1>
         </div>
 
         {/* Role Emphasis (Simplified) */}
         <div className="flex flex-col items-center mb-10">
-          <h2 className="font-heading text-size-tiny font-light tracking-luxury text-text-white uppercase ">
+          <h2 className="font-heading text-size-tiny font-light tracking-[0.3rem] md:tracking-luxury text-text-white uppercase ">
             DATA ENGINEER
           </h2>
         </div>
