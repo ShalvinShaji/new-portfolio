@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
+import SocialSidebar from './components/SocialSidebar';
 
 
 
@@ -14,6 +15,7 @@ function App() {
     <div className="luxury-gradient min-h-screen relative overflow-x-hidden">
       <div className="noise-overlay"></div>
       <Header />
+      <SocialSidebar />
       <main>
         <Hero />
         <About />

@@ -49,8 +49,15 @@ export default {
         'section-y': 'clamp(4rem, 10vh, 15vh)',
         'section-x': 'clamp(1.5rem, 6vw, 6vw)',
       },
-      animation: {},
-      keyframes: {},
+      animation: {
+        shimmer: 'shimmer 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        }
+      },
       letterSpacing: {
         'luxury': '1rem',
         'link': '0.2rem',

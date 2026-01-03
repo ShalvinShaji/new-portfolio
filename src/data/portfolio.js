@@ -5,13 +5,39 @@ export const portfolioData = {
     company: "Tata Consultancy Services",
     tagline: "Building data infrastructure that scales with your ambitions.",
     bio: [
-      "I am a results-driven Data Engineer specializing in building robust ETL pipelines, data warehousing, and cloud infrastructure.",
-      "My expertise lies in orchestrating complex data workflows using Python, SQL, and AWS. I thrive on solving big data challenges, optimizing query performance, and ensuring data reliability to drive strategic decision-making."
+      "I am a results-driven Data Engineer specializing in building scalable ETL pipelines, modern data warehouses, and cloud-native infrastructure.",
+      "I design and optimize complex data workflows using Python, SQL, and AWS, with a strong focus on performance, reliability, and data quality. I enjoy solving large-scale data challenges and transforming raw data into decision-ready insights."
     ],
+    quickInfo: {
+      location: "India",
+      email: "shalvinshaji283@gmail.com"
+    },
     socialLinks: {
       linkedin: "#",
       github: "#",
       instagram: "#"
+    }
+  },
+  sectionTitles: {
+    about: {
+      prefix: "The",
+      title: "Profile",
+      number: "01"
+    },
+    experience: {
+      prefix: "The",
+      title: "Timeline",
+      number: "02"
+    },
+    skills: {
+      prefix: "The",
+      title: "Stack",
+      number: "03"
+    },
+    projects: {
+      prefix: "The",
+      title: "Works",
+      number: "04"
     }
   },
   skills: {
@@ -28,7 +54,7 @@ export const portfolioData = {
   experience: [
   {
     company: "Cognizant Technology Solutions",
-    role: "Data Engineer",
+    role: "Senior Data Engineer",
     period: "Feb 2026 - Present",
     description:
       "Driving cloud data migration initiatives, designing scalable data lake architectures, and implementing secure, high-performance data pipelines on AWS."
