@@ -30,7 +30,7 @@ const Hero = memo(() => {
               href={portfolioData.personalInfo.socialLinks.linkedin} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-text-white/60 hover:text-crimson transition-colors duration-300"
+              className="text-text-white/60"
               aria-label="LinkedIn"
             >
               <FiLinkedin size={18} strokeWidth={1.5} />
@@ -39,7 +39,7 @@ const Hero = memo(() => {
               href={portfolioData.personalInfo.socialLinks.github} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-text-white/60 hover:text-crimson transition-colors duration-300"
+              className="text-text-white/60"
               aria-label="GitHub"
             >
               <FiGithub size={18} strokeWidth={1.5} />
@@ -48,7 +48,7 @@ const Hero = memo(() => {
               href={portfolioData.personalInfo.socialLinks.instagram} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-text-white/60 hover:text-crimson transition-colors duration-300"
+              className="text-text-white/60"
               aria-label="Instagram"
             >
               <FiInstagram size={18} strokeWidth={1.5} />

@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 
 const About = memo(() => {
@@ -23,14 +22,11 @@ const About = memo(() => {
 
           <div className="flex flex-col relative z-10">
             <span className="font-heading text-size-nano font-bold text-text-white uppercase tracking-[0.4rem] mb-2 opacity-50">{about.prefix}</span>
-            <motion.h2 
-              initial={{ backgroundPosition: '200% 0' }}
-              whileInView={{ backgroundPosition: '-200% 0' }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-[length:200%_auto] bg-clip-text text-transparent group-hover:animate-shimmer"
+            <h2 
+              className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-clip-text text-transparent"
             >
               {about.title}
-            </motion.h2>
+            </h2>
           </div>
         </div>
         
@@ -58,8 +54,8 @@ const About = memo(() => {
                   {Object.entries(quickInfo).map(([key, value]) => (
                     <div key={key} className="flex flex-col gap-1 border-b border-border-faint pb-6 last:border-none last:pb-0">
                       <div className="flex items-center gap-3 mb-1">
-                        <div className="w-[1px] h-3 bg-crimson shadow-[0_0_8px_rgba(220,38,38,0.5)]"></div>
-                        <span className="text-size-nano font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-text-white to-text-white/60 bg-clip-text text-transparent text-size-tiny">
+                        <div className="w-1 h-1 bg-crimson rounded-full shadow-[0_0_8px_rgba(220,38,38,0.8)]"></div>
+                        <span className="text-size-nano  uppercase tracking-[0.2em] bg-gradient-to-r from-text-white to-text-white/60 bg-clip-text text-transparent text-size-tiny">
                           {key}
                         </span>
                       </div>

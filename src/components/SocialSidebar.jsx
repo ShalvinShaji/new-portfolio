@@ -15,7 +15,7 @@ const SocialSidebar = () => {
           href={socialLinks.linkedin} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-text-white/40 hover:text-crimson transition-all duration-300 transform md:hover:-translate-x-1 hover:-translate-y-1 md:hover:-translate-y-0"
+          className="text-text-white/40"
           aria-label="LinkedIn"
         >
           <FiLinkedin size={18} strokeWidth={1.5} />
@@ -24,7 +24,7 @@ const SocialSidebar = () => {
           href={socialLinks.github} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-text-white/40 hover:text-crimson transition-all duration-300 transform md:hover:-translate-x-1 hover:-translate-y-1 md:hover:-translate-y-0"
+          className="text-text-white/40"
           aria-label="GitHub"
         >
           <FiGithub size={18} strokeWidth={1.5} />
@@ -33,7 +33,7 @@ const SocialSidebar = () => {
           href={socialLinks.instagram} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-text-white/40 hover:text-crimson transition-all duration-300 transform md:hover:-translate-x-1 hover:-translate-y-1 md:hover:-translate-y-0"
+          className="text-text-white/40"
           aria-label="Instagram"
         >
           <FiInstagram size={18} strokeWidth={1.5} />
@@ -44,9 +44,7 @@ const SocialSidebar = () => {
       <div className="w-[1px] h-20 bg-border-faint hidden md:block"></div>
       
       {/* Vertical Label */}
-      <span className="font-heading text-[10px] uppercase tracking-[0.3em] text-text-white/20 vertical-text select-none rotate-90 mt-8 mb-4 hidden md:block">
-        {/* Follow */}
-      </span>
+
     </div>
   );
 };
