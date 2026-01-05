@@ -6,17 +6,13 @@ const Hero = memo(() => {
   const { name, role } = portfolioData.personalInfo;
 
   return (
-    <section 
-      id="hero" 
-      className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden text-white" 
-    >
+    <section id="hero" className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden text-white">
       <div className="text-center z-10 flex flex-col justify-center items-center h-full w-full px-8">
         <div className="relative flex flex-col items-center w-full max-w-full">
           <h1 className="font-heading text-size-hero font-bold leading-[0.8] tracking-tighter m-0 uppercase bg-gradient-to-br from-text-white via-text-white to-text-white/10 bg-clip-text text-transparent px-4 cursor-default animate-none">
             {name}
           </h1>
 
-          {/* Role & Mobile Socials - Absolute on desktop to keep Name centered, static on mobile to center entire group */}
           <div className="md:absolute md:top-full mt-6 left-0 w-full flex flex-col items-center">
             <h2 className="font-heading text-size-tiny font-light tracking-[0.3rem] md:tracking-luxury text-text-white uppercase md:whitespace-nowrap">
               {role}
@@ -27,7 +23,7 @@ const Hero = memo(() => {
                 href={portfolioData.personalInfo.socialLinks.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-text-white/60"
+                className="text-text-white/60 hover:text-crimson transition-colors"
                 aria-label="LinkedIn"
               >
                 <FiLinkedin size={18} strokeWidth={1.5} />
@@ -36,7 +32,7 @@ const Hero = memo(() => {
                 href={portfolioData.personalInfo.socialLinks.github} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-text-white/60"
+                className="text-text-white/60 hover:text-crimson transition-colors"
                 aria-label="GitHub"
               >
                 <FiGithub size={18} strokeWidth={1.5} />
@@ -45,7 +41,7 @@ const Hero = memo(() => {
                 href={portfolioData.personalInfo.socialLinks.instagram} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-text-white/60"
+                className="text-text-white/60 hover:text-crimson transition-colors"
                 aria-label="Instagram"
               >
                 <FiInstagram size={18} strokeWidth={1.5} />

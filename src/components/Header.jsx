@@ -29,13 +29,7 @@ const Header = memo(() => {
   }, [handleScroll]);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-400 ${
-        scrolled 
-          ? 'backdrop-blur-xl py-4 shadow-none' 
-          : 'bg-transparent py-6'
-      }`}
-    >
+    <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-400 ${scrolled ? 'backdrop-blur-xl py-4 shadow-none' : 'bg-transparent py-6'}`}>
       <div className="max-w-[1400px] mx-auto px-8 flex justify-start items-center">
         <a 
           href="/" 

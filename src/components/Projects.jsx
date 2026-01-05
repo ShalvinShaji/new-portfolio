@@ -6,10 +6,7 @@ const Projects = memo(() => {
   const { projects: projectsTitle } = portfolioData.sectionTitles;
 
   return (
-    <section 
-      id="projects" 
-      className="section-padding" 
-    >
+    <section id="projects" className="section-padding">
       <div className="max-w-[1400px] mx-auto px-8">
         <div className="relative mb-20 flex items-start group">
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
@@ -18,19 +15,17 @@ const Projects = memo(() => {
 
           <div className="flex flex-col relative z-10">
             <span className="font-heading text-size-nano font-bold text-text-white uppercase tracking-[0.4rem] mb-2 opacity-50">{projectsTitle.prefix}</span>
-            <h2 
-              className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-clip-text text-transparent"
-            >
+            <h2 className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-clip-text text-transparent">
               {projectsTitle.title}
             </h2>
           </div>
         </div>
         
         <div className="flex flex-col pl-4 border-l border-border-faint">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div 
               key={project.id} 
-              className={`flex flex-col md:flex-row justify-between items-start py-16 border-b border-border-faint group`} 
+              className="flex flex-col md:flex-row justify-between items-start py-16 border-b border-border-faint group" 
             >
               <div className="flex-1">
                 <h3 className="font-heading text-size-h2 font-bold text-text-white mb-4">
@@ -39,7 +34,7 @@ const Projects = memo(() => {
                 <div className="flex gap-6 mt-4">
                   <a 
                     href={project.links.demo} 
-                    className="font-heading text-size-tiny font-light text-text-white/90 relative" 
+                    className="font-heading text-size-tiny font-light text-text-white/90 hover:text-crimson transition-colors" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label={`Live demo of ${project.title}`}
@@ -48,7 +43,7 @@ const Projects = memo(() => {
                   </a>
                   <a 
                     href={project.links.project} 
-                    className="font-heading text-size-tiny font-light text-text-white/90 relative" 
+                    className="font-heading text-size-tiny font-light text-text-white/90 hover:text-crimson transition-colors" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label={`View code for ${project.title}`}

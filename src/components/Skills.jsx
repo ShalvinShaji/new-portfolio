@@ -6,10 +6,7 @@ const Skills = memo(() => {
   const { skills: skillsTitle } = portfolioData.sectionTitles;
 
   return (
-    <section 
-      id="skills" 
-      className="section-padding"
-    >
+    <section id="skills" className="section-padding">
       <div className="max-w-[1400px] mx-auto px-8">
         <div className="relative mb-20 flex items-start group">
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
@@ -18,9 +15,7 @@ const Skills = memo(() => {
 
           <div className="flex flex-col relative z-10">
             <span className="font-heading text-size-nano font-bold text-text-white uppercase tracking-[0.4rem] mb-2 opacity-50">{skillsTitle.prefix}</span>
-            <h2 
-              className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-clip-text text-transparent"
-            >
+            <h2 className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-clip-text text-transparent">
               {skillsTitle.title}
             </h2>
           </div>
@@ -29,7 +24,7 @@ const Skills = memo(() => {
         <div className="pl-4 border-l border-border-faint h-full">
           <div className="py-12 border-b border-border-faint">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {Object.entries(skills).map(([category, items], index) => (
+              {Object.entries(skills).map(([category, items]) => (
                 <div 
                   key={category}
                   className="group flex flex-col gap-6 p-8 bg-text-white/[0.02] border border-border-faint"

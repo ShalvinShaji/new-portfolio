@@ -9,10 +9,7 @@ const About = memo(() => {
   const { about } = portfolioData.sectionTitles;
 
   return (
-    <section 
-      id="about" 
-      className="section-padding" 
-    >
+    <section id="about" className="section-padding">
       <div className="max-w-[1400px] mx-auto px-8">
         <div className="relative mb-20 flex items-start group">
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
@@ -20,9 +17,7 @@ const About = memo(() => {
           </span>
           <div className="flex flex-col relative z-10">
             <span className="font-heading text-size-nano font-bold text-text-white uppercase tracking-[0.4rem] mb-2 opacity-50">{about.prefix}</span>
-            <h2 
-              className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-clip-text text-transparent"
-            >
+            <h2 className="font-heading text-size-h1 font-extrabold uppercase tracking-tighter leading-none ml-[-4px] bg-gradient-to-r from-text-white via-text-white/40 to-text-white bg-clip-text text-transparent">
               {about.title}
             </h2>
           </div>
@@ -47,7 +42,7 @@ const About = memo(() => {
                     <div key={key} className="flex flex-col gap-1 border-b border-border-faint pb-6 last:border-none last:pb-0">
                       <div className="flex items-center gap-3 mb-1">
                         <div className="w-1 h-1 bg-crimson rounded-full shadow-[0_0_8px_rgba(220,38,38,0.8)]"></div>
-                        <span className="text-size-nano  uppercase tracking-[0.2em] bg-gradient-to-r from-text-white to-text-white/60 bg-clip-text text-transparent text-size-tiny">
+                        <span className="text-size-nano uppercase tracking-[0.2em] bg-gradient-to-r from-text-white to-text-white/60 bg-clip-text text-transparent text-size-tiny">
                           {key}
                         </span>
                       </div>

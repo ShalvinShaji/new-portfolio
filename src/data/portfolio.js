@@ -70,7 +70,7 @@ export const portfolioData = {
   },
 
   experience: [
-    // {
+     // {
     //   company: "Cognizant Technology Solutions",
     //   role: "Senior Data Engineer",
     //   period: "Feb 2026 - Present",

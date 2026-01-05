@@ -7,9 +7,9 @@ const SocialSidebar = memo(() => {
 
   return (
     <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-8">
-      <div className="w-[1px] h-20 bg-border-faint hidden md:block"></div>
+      <div className="w-[1px] h-20 bg-border-faint"></div>
 
-      <div className="flex md:flex-col gap-8 md:gap-6">
+      <div className="flex flex-col gap-6">
         <a 
           href={socialLinks.linkedin} 
           target="_blank" 
@@ -39,7 +39,7 @@ const SocialSidebar = memo(() => {
         </a>
       </div>
 
-      <div className="w-[1px] h-20 bg-border-faint hidden md:block"></div>
+      <div className="w-[1px] h-20 bg-border-faint"></div>
     </div>
   );
 });
