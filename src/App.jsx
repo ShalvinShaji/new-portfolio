@@ -28,7 +28,7 @@ function App() {
         <Header />
         <SocialSidebar />
         <main>
-          <Suspense fallback={<div className="h-screen"></div>}>
+          <Suspense fallback={<div className="h-screen bg-bg-main"></div>}>
             <Hero />
             <About />
             <Experience />

@@ -7,10 +7,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply bg-bg-main;
   }
 
   body {
-    @apply font-body text-text-white antialiased leading-relaxed;
+    @apply font-body bg-bg-main text-text-white antialiased leading-relaxed;
   }
 
   /* Custom selection color */
