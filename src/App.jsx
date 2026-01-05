@@ -21,8 +21,8 @@ function App() {
         <Preloader onComplete={() => setLoading(false)} />
       )}
 
-      <div className="fixed top-0 left-0 w-full h-full luxury-gradient -z-20"></div>
-      <div className="noise-overlay"></div>
+      <div className="fixed top-0 left-0 w-full h-full luxury-gradient -z-20 pointer-events-none"></div>
+      <div className="fixed top-0 left-0 w-full h-full noise-overlay pointer-events-none"></div>
       
       <div className={`transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         <Header />

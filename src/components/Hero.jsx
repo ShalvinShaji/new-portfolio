@@ -18,7 +18,7 @@ const Hero = memo(() => {
 
           {/* Role & Mobile Socials - Absolute positioning to keep Name centered */}
           <div className="absolute top-full mt-6 left-0 w-full flex flex-col items-center">
-            <h2 className="font-heading text-size-tiny font-light tracking-[0.3rem] md:tracking-luxury text-text-white uppercase whitespace-nowrap">
+            <h2 className="font-heading text-size-tiny font-light tracking-[0.2rem] md:tracking-luxury text-text-white uppercase text-center max-w-[90vw]">
               {role}
             </h2>
             
