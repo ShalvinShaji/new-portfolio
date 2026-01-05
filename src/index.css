@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply font-body bg-bg-main text-text-white antialiased leading-relaxed;
+    @apply font-body text-text-white antialiased leading-relaxed;
   }
 
   /* Custom selection color */
@@ -41,7 +41,7 @@
   }
 
   .luxury-gradient {
-    background: radial-gradient(circle at center, #1a1a1a 0%, #111111 100%);
+    background: radial-gradient(circle at center, #1a1a1a 0%, #030303 100%);
   }
 }
 
@@ -67,6 +67,6 @@
 }
 
 .noise-overlay {
-  @apply fixed top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-[0.05] contrast-[150%] brightness-[150%];
+  @apply fixed top-0 left-0 w-full h-full pointer-events-none z-[-10] opacity-[0.05] contrast-[150%] brightness-[150%];
   background: url("https://grainy-gradients.vercel.app/noise.svg");
 }
