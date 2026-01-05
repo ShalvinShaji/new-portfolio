@@ -42,30 +42,59 @@ const Preloader = ({ onComplete }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-[9999] bg-bg-main flex items-center justify-center transition-opacity duration-500 will-change-opacity pointer-events-none"
+      className="fixed inset-0 z-[9999] bg-bg-main flex items-center justify-center transition-opacity duration-700 will-change-opacity pointer-events-none"
       style={{ opacity }}
     >
-      <div className="flex items-center justify-center w-full max-w-[300px] gap-4">
+      {/* Premium Background Layer */}
+      <div className="absolute inset-0 luxury-gradient opacity-80"></div>
+      <div className="absolute inset-0 noise-overlay opacity-20"></div>
+
+      {/* Large Background Number (Premium Technical Feel) */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        <span className="font-heading text-size-index font-black text-text-white/[0.03] select-none leading-none scale-150 md:scale-100">
+          {count.toString().padStart(2, '0')}
+        </span>
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center w-full max-w-[400px] px-8">
         
-        {/* Progress Bar Container */}
-        <div className="flex-1 h-[1px] bg-text-white/10 rounded-full overflow-hidden">
-          {/* Progress Bar Fill */}
-          <div 
-            className="h-full bg-gradient-to-r from-crimson to-text-white transition-all duration-100 ease-out"
-            style={{ width: `${count}%` }}
-          ></div>
+        {/* Loading Label */}
+        <div className="flex items-center gap-3 mb-6 w-full justify-start overflow-hidden">
+          <span className="font-heading text-size-nano font-bold text-text-white uppercase tracking-[0.5rem] opacity-30 animate-pulse">
+            Initializing
+          </span>
+          <div className="h-[1px] flex-1 bg-text-white/5"></div>
         </div>
 
-        {/* Percentage Text */}
-        <div className="flex items-baseline min-w-[3ch] justify-end">
-          <span className="font-heading text-xl font-light text-text-white tabular-nums">
-            {count}
-          </span>
-          <span className="font-heading text-sm font-thin text-crimson ml-0.5">
-            %
-          </span>
+        <div className="flex items-center justify-center w-full gap-8">
+          {/* Enhanced Progress Bar Container */}
+          <div className="flex-1 h-[2px] bg-text-white/5 rounded-full overflow-hidden relative">
+            {/* Progress Bar Fill with Glow */}
+            <div 
+              className="h-full bg-gradient-to-r from-crimson to-text-white transition-all duration-300 ease-out relative shadow-[0_0_15px_rgba(220,20,60,0.5)]"
+              style={{ width: `${count}%` }}
+            >
+              {/* Internal Shimmer/Scanning Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent w-full h-full -translate-x-full animate-shimmer"></div>
+            </div>
+          </div>
+
+          {/* Percentage Text with High-End Layout */}
+          <div className="flex items-baseline min-w-[4ch] justify-end group">
+            <span className="font-heading text-3xl font-light text-text-white tabular-nums tracking-tighter">
+              {count}
+            </span>
+            <span className="font-heading text-xs font-medium text-crimson ml-1 uppercase tracking-widest opacity-80">
+              %
+            </span>
+          </div>
         </div>
 
+        {/* Dynamic Detail Text */}
+        <div className="mt-8 w-full flex justify-between items-center opacity-20">
+          <span className="font-mono text-[10px] uppercase tracking-widest">System Check</span>
+          <span className="font-mono text-[10px] uppercase tracking-widest">Protocol {count > 50 ? '02' : '01'}</span>
+        </div>
       </div>
     </div>
   );
