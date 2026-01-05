@@ -32,7 +32,7 @@ const Header = memo(() => {
     <header 
       className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-400 ${
         scrolled 
-          ? 'bg-bg-main/40 backdrop-blur-md py-4' 
+          ? 'bg-bg-main/60 backdrop-blur-xl py-4 shadow-2xl' 
           : 'bg-transparent py-6'
       }`}
     >

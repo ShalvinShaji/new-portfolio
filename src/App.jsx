@@ -12,7 +12,9 @@ import SocialSidebar from './components/SocialSidebar';
 
 function App() {
   return (
-    <div className="luxury-gradient min-h-screen relative overflow-x-hidden">
+    <div className="relative min-h-screen text-text-white overflow-x-hidden selection:bg-crimson selection:text-text-white">
+      {/* Fixed Background Layer to prevent mobile scroll issues */}
+      <div className="fixed top-0 left-0 w-full h-full luxury-gradient -z-20"></div>
       <div className="noise-overlay"></div>
       <Header />
       <SocialSidebar />
@@ -21,7 +23,7 @@ function App() {
         <About />
         <Experience />
         <Skills />
-        <Projects />
+        {/* <Projects /> */}
       </main>
       <Footer />
     </div>
