@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
 import { portfolioData } from '../data/portfolio';
 
-const SocialSidebar = () => {
+const SocialSidebar = memo(() => {
   const { socialLinks } = portfolioData.personalInfo;
 
   return (
@@ -14,34 +14,36 @@ const SocialSidebar = () => {
           href={socialLinks.linkedin} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-text-white/40"
+          className="text-text-white/40 hover:text-crimson transition-colors duration-300"
           aria-label="LinkedIn"
         >
-          <FiLinkedin size={18} strokeWidth={1.5} />
+          <FiLinkedin size={20} strokeWidth={1.5} />
         </a>
         <a 
           href={socialLinks.github} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-text-white/40"
+          className="text-text-white/40 hover:text-crimson transition-colors duration-300"
           aria-label="GitHub"
         >
-          <FiGithub size={18} strokeWidth={1.5} />
+          <FiGithub size={20} strokeWidth={1.5} />
         </a>
         <a 
           href={socialLinks.instagram} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="text-text-white/40"
+          className="text-text-white/40 hover:text-crimson transition-colors duration-300"
           aria-label="Instagram"
         >
-          <FiInstagram size={18} strokeWidth={1.5} />
+          <FiInstagram size={20} strokeWidth={1.5} />
         </a>
       </div>
 
       <div className="w-[1px] h-20 bg-border-faint hidden md:block"></div>
     </div>
   );
-};
+});
+
+SocialSidebar.displayName = 'SocialSidebar';
 
 export default SocialSidebar;

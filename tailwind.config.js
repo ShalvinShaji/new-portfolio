@@ -9,8 +9,8 @@ export default {
       colors: {
         // --- Core Theme Colors ---
         bg: {
-          main: '#030303',      // Deep Black: Main background
-          card: '#0a0a0a',      // Lighter Black: Card backgrounds
+          main: '#111111',      // Original Dark Gray: Main background
+          card: '#111111',      // Matches main background
           charcoal: '#1a1a1a',  // Charcoal: Gradient start
         },
         crimson: {
