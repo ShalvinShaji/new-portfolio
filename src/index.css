@@ -15,7 +15,13 @@
 
   /* Custom selection color */
   ::selection {
-    @apply bg-crimson text-text-white;
+    background: rgba(193, 18, 31, 0.18);
+    color: #ffffff;
+  }
+
+  ::-moz-selection {
+    background: rgba(193, 18, 31, 0.18);
+    color: #ffffff;
   }
 }
 

@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { portfolioData } from '../data/portfolio';
 
-
 const Skills = memo(() => {
   const { skills } = portfolioData;
   const { skills: skillsTitle } = portfolioData.sectionTitles;
@@ -13,7 +12,6 @@ const Skills = memo(() => {
     >
       <div className="max-w-[1400px] mx-auto px-8">
         <div className="relative mb-20 flex items-start group">
-          {/* Background Numbering */}
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
             {skillsTitle.number}
           </span>
@@ -36,15 +34,12 @@ const Skills = memo(() => {
                   key={category}
                   className="group flex flex-col gap-6 p-8 bg-text-white/[0.02] border border-border-faint"
                 >
-                  {/* Category Header */}
                   <div className="flex items-center gap-3">
                      <div className="w-1 h-1 bg-crimson rounded-full shadow-[0_0_8px_rgba(220,38,38,0.8)]"></div>
                      <h3 className="font-heading text-size-tiny font-bold uppercase tracking-[0.2em] bg-gradient-to-r from-text-white to-text-white/60 bg-clip-text text-transparent">
                        {category.replace('_', ' ')}
                      </h3>
                   </div>
-
-                  {/* Skills Grid */}
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill, idx) => (
                       <span 

@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { portfolioData } from '../data/portfolio';
 
-
 const Projects = memo(() => {
   const { projects } = portfolioData;
   const { projects: projectsTitle } = portfolioData.sectionTitles;
@@ -13,7 +12,6 @@ const Projects = memo(() => {
     >
       <div className="max-w-[1400px] mx-auto px-8">
         <div className="relative mb-20 flex items-start group">
-          {/* Background Numbering */}
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
             {projectsTitle.number}
           </span>
