@@ -9,7 +9,7 @@ export default {
       colors: {
         // --- Core Theme Colors ---
         bg: {
-          main: '#111111',      // Original Dark Gray: Main background
+          main: '#0B0B0C',      // Original Dark Gray: Main background
           card: '#111111',      // Matches main background
           charcoal: '#1a1a1a',  // Charcoal: Gradient start
         },
