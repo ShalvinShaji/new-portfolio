@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { m } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 
 const About = memo(() => {
@@ -11,7 +12,13 @@ const About = memo(() => {
   return (
     <section id="about" className="section-padding">
       <div className="max-w-[1400px] mx-auto px-8">
-        <div className="relative mb-20 flex items-start group">
+        <m.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mb-20 flex items-start group"
+        >
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
             {about.number}
           </span>
@@ -21,9 +28,15 @@ const About = memo(() => {
               {about.title}
             </h2>
           </div>
-        </div>
+        </m.div>
         
-        <div className="pl-4 border-l border-border-faint relative">
+        <m.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="pl-4 border-l border-border-faint relative"
+        >
           <div className="pt-12 pb-12 border-b border-border-faint">
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-24 relative items-start">
               
@@ -55,7 +68,7 @@ const About = memo(() => {
               </div>
             </div>
           </div>
-        </div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { m } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 
 const Experience = memo(() => {
@@ -11,7 +12,13 @@ const Experience = memo(() => {
       className="section-padding" 
     >
       <div className="max-w-[1400px] mx-auto px-8">
-        <div className="relative mb-20 flex items-start group">
+        <m.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mb-20 flex items-start group"
+        >
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
             {experienceTitle.number}
           </span>
@@ -24,11 +31,15 @@ const Experience = memo(() => {
               {experienceTitle.title}
             </h2>
           </div>
-        </div>
+        </m.div>
 
         <div className="flex flex-col pl-4 border-l border-border-faint">
           {experience.map((exp, index) => (
-            <div 
+            <m.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               key={index} 
               className="flex flex-col md:flex-row gap-8 md:gap-12 py-12 border-b border-border-faint relative"
             >
@@ -53,7 +64,7 @@ const Experience = memo(() => {
                    </p>
                 </div>
               </div>
-            </div>
+            </m.div>
           ))}
         </div>
       </div>

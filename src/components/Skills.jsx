@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { m } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 
 const Skills = memo(() => {
@@ -8,7 +9,13 @@ const Skills = memo(() => {
   return (
     <section id="skills" className="section-padding">
       <div className="max-w-[1400px] mx-auto px-8">
-        <div className="relative mb-20 flex items-start group">
+        <m.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mb-20 flex items-start group"
+        >
           <span className="absolute left-[-16px] top-[-24px] font-heading text-size-index font-black text-text-white/[0.03] leading-none select-none pointer-events-none">
             {skillsTitle.number}
           </span>
@@ -19,13 +26,17 @@ const Skills = memo(() => {
               {skillsTitle.title}
             </h2>
           </div>
-        </div>
+        </m.div>
         
         <div className="pl-4 border-l border-border-faint h-full">
           <div className="py-12 border-b border-border-faint">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {Object.entries(skills).map(([category, items]) => (
-                <div 
+              {Object.entries(skills).map(([category, items], i) => (
+                <m.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
                   key={category}
                   className="group flex flex-col gap-6 p-8 bg-text-white/[0.02] border border-border-faint"
                 >
@@ -45,7 +56,7 @@ const Skills = memo(() => {
                       </span>
                     ))}
                   </div>
-                </div>
+                </m.div>
               ))}
             </div>
           </div>

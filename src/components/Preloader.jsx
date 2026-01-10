@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Preloader = ({ onComplete }) => {
+const Preloader = ({ onComplete, onFadeStart }) => {
   const [count, setCount] = useState(0);
   const [opacity, setOpacity] = useState(1);
 
@@ -22,12 +22,13 @@ const Preloader = ({ onComplete }) => {
   useEffect(() => {
     if (count === 100) {
       const timer = setTimeout(() => {
+        if (onFadeStart) onFadeStart();
         setOpacity(0);
         setTimeout(onComplete, 1000);
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [count, onComplete]);
+  }, [count, onComplete, onFadeStart]);
 
   if (!opacity && count === 100) return null;
 
