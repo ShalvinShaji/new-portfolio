@@ -2,12 +2,14 @@ import React, { memo } from 'react';
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
 import { m } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
+import SocialSidebar from './SocialSidebar';
 
 const Hero = memo(({ startAnimation }) => {
   const { name, role } = portfolioData.personalInfo;
 
   return (
     <section id="hero" className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden text-white">
+      <SocialSidebar startAnimation={startAnimation} />
       <div className="text-center z-10 flex flex-col justify-center items-center h-full w-full px-8">
         <div className="relative flex flex-col items-center w-full max-w-full">
           <m.h1 

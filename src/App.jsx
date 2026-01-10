@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from 'react';
 import { LazyMotion, domAnimation } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import SocialSidebar from './components/SocialSidebar';
 import Preloader from './components/Preloader';
 
 // Lazy load heavy sections
@@ -30,7 +29,6 @@ function App() {
       <LazyMotion features={domAnimation}>
         <div>
           <Header />
-          <SocialSidebar startAnimation={startAnim} />
           <main>
             <Suspense fallback={<div className="h-screen bg-bg-main"></div>}>
               <Hero startAnimation={startAnim} />

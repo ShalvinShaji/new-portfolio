@@ -7,7 +7,7 @@ const SocialSidebar = memo(({ startAnimation }) => {
   const { socialLinks } = portfolioData.personalInfo;
 
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-8">
+    <div className="absolute right-8 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-8">
       <m.div 
         initial={{ y: -100, opacity: 0 }}
         animate={startAnimation ? { y: 0, opacity: 1 } : {}}
