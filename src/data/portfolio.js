@@ -16,6 +16,12 @@ export const portfolioData = {
       linkedin: "#",
       github: "#",
       instagram: "#"
+    },
+    footer: {
+      tagline: {
+        part1: "Data by Logic",
+        part2: "Design by Intent"
+      }
     }
   },
 

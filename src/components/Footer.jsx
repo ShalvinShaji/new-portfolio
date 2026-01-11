@@ -5,7 +5,7 @@ import { portfolioData } from '../data/portfolio';
 
 const Footer = memo(() => {
   const { email } = portfolioData.personalInfo.quickInfo;
-  const { socialLinks } = portfolioData.personalInfo;
+  const { socialLinks, name, footer } = portfolioData.personalInfo;
 
   const socialIcons = [
     { Icon: FiMail, link: `mailto:${email}`, label: "Email" },
@@ -29,7 +29,7 @@ const Footer = memo(() => {
             className="flex items-center group cursor-default"
          >
             <p className="font-body text-[10px] text-text-white/30 uppercase tracking-[0.15em] transition-colors duration-500 group-hover:text-text-white/60 flex items-center">
-                © {new Date().getFullYear()} Shalvin Shaji <span className="mx-3 inline-block w-1 h-1 bg-crimson rounded-full shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span> All rights reserved.
+                © {new Date().getFullYear()} {name} <span className="mx-3 inline-block w-1 h-1 bg-crimson rounded-full shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span> All rights reserved.
             </p>
          </m.div>
 
@@ -43,11 +43,11 @@ const Footer = memo(() => {
                 className="hidden lg:flex items-center"
             >
                 <p className="font-body text-[10px] text-text-white/30 uppercase tracking-[0.15em] whitespace-nowrap">
-                    Data by Logic
+                    {footer.tagline.part1}
                 </p>
                 <div className="w-[1px] h-2.5 bg-white/10 mx-4"></div>
                 <p className="font-body text-[10px] text-text-white/30 uppercase tracking-[0.15em] whitespace-nowrap">
-                    Design by Intent
+                    {footer.tagline.part2}
                 </p>
             </m.div>
 

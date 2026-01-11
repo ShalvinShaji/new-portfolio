@@ -42,7 +42,7 @@ function App() {
           <main>
             <Suspense fallback={<div className="h-screen bg-bg-main"></div>}>
               <Hero startAnimation={startAnim} />
-              <Projects />
+              {/* <Projects /> */}
               <About />
               <Experience />
               <Skills />

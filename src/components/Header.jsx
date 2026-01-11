@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import logo from '../assets/logo.png';
+import { portfolioData } from '../data/portfolio';
 
 const Header = memo(() => {
   const [scrolled, setScrolled] = useState(false);
+  const { name } = portfolioData.personalInfo;
 
   const handleScroll = useCallback(() => {
     const isScrolled = window.scrollY > 50;
@@ -36,7 +38,7 @@ const Header = memo(() => {
           className="font-heading text-2xl font-extrabold text-text-white uppercase tracking-[-0.05em] no-underline cursor-pointer hover:text-crimson transition-colors duration-300 flex items-center"
           aria-label="Back to top"
         >
-          <img src={logo} alt="Shalvin Shaji Personal Logo" className="w-8 h-8 object-contain" width="32" height="32" />
+          <img src={logo} alt={`${name} Personal Logo`} className="w-8 h-8 object-contain" width="32" height="32" />
         </a>
       </div>
     </header>
