@@ -13,9 +13,9 @@ export const portfolioData = {
       email: "shalvinshaji283@gmail.com"
     },
     socialLinks: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#"
+      linkedin: "https://www.linkedin.com/in/shalvinshaji/",
+      github: "https://github.com/ShalvinShaji",
+      instagram: "https://www.instagram.com/shalv1n________/"
     },
     footer: {
       tagline: {
