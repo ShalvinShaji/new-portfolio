@@ -10,9 +10,19 @@ const About = lazy(() => import('./components/About'));
 const Experience = lazy(() => import('./components/Experience'));
 const Skills = lazy(() => import('./components/Skills'));
 
+const Projects = lazy(() => import('./components/Projects'));
+
 function App() {
   const [loading, setLoading] = React.useState(true);
   const [startAnim, setStartAnim] = React.useState(false);
+
+  React.useEffect(() => {
+    // Force scroll to top on refresh/load to ensure proper animation sequence
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="relative min-h-screen text-text-white overflow-x-hidden selection:bg-crimson selection:text-text-white">
@@ -32,6 +42,7 @@ function App() {
           <main>
             <Suspense fallback={<div className="h-screen bg-bg-main"></div>}>
               <Hero startAnimation={startAnim} />
+              <Projects />
               <About />
               <Experience />
               <Skills />

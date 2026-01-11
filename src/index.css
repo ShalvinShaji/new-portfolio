@@ -48,14 +48,6 @@
 
 /* Base utility for containers used across the app */
 @layer components {
-  /* Buttons */
-  .btn {
-    @apply inline-block px-8 py-3.5 bg-crimson text-text-white rounded-[4px] font-heading font-semibold uppercase tracking-wider border-none cursor-pointer transition-all duration-200 hover:bg-crimson-light hover:-translate-y-0.5;
-  }
-
-  .btn-outline {
-    @apply inline-block px-8 py-3.5 bg-transparent border-2 border-text-white text-text-white rounded-[4px] font-heading font-semibold uppercase tracking-wider cursor-pointer transition-all duration-200 hover:border-crimson hover:text-crimson;
-  }
     /* Custom scrollbar */
   ::-webkit-scrollbar {
     @apply w-1;
