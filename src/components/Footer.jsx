@@ -19,23 +19,25 @@ const Footer = memo(() => {
        {/* Ambient Light Effect (Optional - very subtle) */}
        <div className="absolute top-0 left-1/4 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-crimson/10 to-transparent"></div>
 
-       <div className="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+       <div className="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-4 relative z-10">
          
          {/* Left Side: Copyright */}
          <m.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center group cursor-default"
+            className="flex items-center group cursor-default order-2 md:order-1"
          >
-            <p className="font-body text-[10px] text-text-white/30 uppercase tracking-[0.15em] transition-colors duration-500 group-hover:text-text-white/60 flex items-center">
-                © {new Date().getFullYear()} {name} <span className="mx-3 inline-block w-1 h-1 bg-crimson rounded-full shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span> All rights reserved.
+            <p className="font-body text-[10px] text-text-white/30 uppercase tracking-[0.15em] transition-colors duration-500 group-hover:text-text-white/60 flex flex-wrap justify-center items-center text-center">
+                <span className="whitespace-nowrap">© {new Date().getFullYear()} {name}</span>
+                <span className="mx-3 inline-block w-1 h-1 bg-crimson rounded-full shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span>
+                <span className="whitespace-nowrap">All rights reserved.</span>
             </p>
          </m.div>
 
          {/* Right Side: Grouped Tagline & Icons */}
-         <div className="flex items-center gap-4">
-            <m.div 
+         <div className="flex items-center gap-4 order-1 md:order-2">
+            {/* <m.div 
                 initial={{ opacity: 0, x: 10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -49,10 +51,10 @@ const Footer = memo(() => {
                 <p className="font-body text-[10px] text-text-white/30 uppercase tracking-[0.15em] whitespace-nowrap">
                     {footer.tagline.part2}
                 </p>
-            </m.div>
+            </m.div> */}
 
             {/* Group Separator */}
-            <div className="hidden lg:block w-[1px] h-3 bg-white/10"></div>
+            {/* <div className="hidden lg:block w-[1px] h-3 bg-white/10"></div> */}
 
             <div className="flex items-center gap-6">
                {socialIcons.map(({ Icon, link, label }, index) => (
@@ -68,7 +70,7 @@ const Footer = memo(() => {
                     className="text-text-white/30 hover:text-crimson transition-all duration-300 transform hover:scale-110"
                     aria-label={label}
                  >
-                   <Icon size={12} strokeWidth={2} />
+                   <Icon className="w-[14px] h-[14px] md:w-4 md:h-4" strokeWidth={1.5} />
                  </m.a>
                ))}
             </div>

@@ -37,19 +37,17 @@ function App() {
       <div className="noise-overlay"></div>
       
       <LazyMotion features={domAnimation}>
-        <div>
-          <Header />
-          <main>
-            <Suspense fallback={<div className="h-screen bg-bg-main"></div>}>
-              <Hero startAnimation={startAnim} />
-              {/* <Projects /> */}
-              <About />
-              <Experience />
-              <Skills />
-            </Suspense>
-          </main>
-          <Footer />
-        </div>
+        <Header />
+        <main>
+          <Suspense fallback={<div className="h-screen bg-bg-main"></div>}>
+            <Hero startAnimation={startAnim} />
+            {/* <Projects /> */}
+            <About />
+            <Experience />
+            <Skills />
+          </Suspense>
+        </main>
+        <Footer />
       </LazyMotion>
     </div>
   );
