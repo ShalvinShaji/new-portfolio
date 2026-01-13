@@ -76,13 +76,6 @@ export const portfolioData = {
   },
 
   experience: [
-     // {
-    //   company: "Cognizant Technology Solutions",
-    //   role: "Senior Data Engineer",
-    //   period: "Feb 2026 - Present",
-    //   description:
-    //     "Driving cloud data migration initiatives, designing scalable data lake architectures, and implementing secure, high-performance data pipelines on AWS."
-    // },
     {
       company: "Tata Consultancy Services",
       role: "Data Engineer",
