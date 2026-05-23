@@ -5,47 +5,48 @@ export const portfolioData = {
     company: "Tata Consultancy Services",
     tagline: "Building data infrastructure that scales with your ambitions.",
     bio: [
-      "I am a results-driven Data Engineer specializing in building scalable ETL pipelines, modern data warehouses, and cloud-native infrastructure.",
-      "I design and optimize complex data workflows using Python, SQL, and AWS, with a strong focus on performance, reliability, and data quality. I enjoy solving large-scale data challenges and transforming raw data into decision-ready insights."
+      "I’m a Data Engineer passionate about building scalable ETL pipelines, modern data platforms, and cloud-native data solutions. I enjoy transforming raw, complex data into reliable and actionable insights that support smarter business decisions.",
+      "My experience includes working with Python, SQL, AWS, data warehousing, and workflow orchestration, with a strong focus on performance, scalability, and data quality. I specialize in designing efficient data pipelines, optimizing large-scale data processing, and enabling seamless data integration across systems.",
+      "I’m constantly exploring modern data engineering practices, distributed systems, and cloud technologies to build robust, future-ready data architectures that drive real impact.",
     ],
     quickInfo: {
       location: "India",
-      email: "shalvinshaji283@gmail.com"
+      email: "shalvinshaji283@gmail.com",
     },
     socialLinks: {
       linkedin: "https://www.linkedin.com/in/shalvinshaji/",
       github: "https://github.com/ShalvinShaji",
-      instagram: "https://www.instagram.com/shalv1n________/"
+      instagram: "https://www.instagram.com/shalv.in_",
     },
     footer: {
       tagline: {
         part1: "Data by Logic",
-        part2: "Design by Intent"
-      }
-    }
+        part2: "Design by Intent",
+      },
+    },
   },
 
   sectionTitles: {
     about: {
       prefix: "The",
       title: "Profile",
-      number: "01"
+      number: "01",
     },
     experience: {
       prefix: "The",
       title: "Timeline",
-      number: "02"
+      number: "02",
     },
     skills: {
       prefix: "The",
       title: "Stack",
-      number: "03"
+      number: "03",
     },
     projects: {
       prefix: "The",
       title: "Works",
-      number: "04"
-    }
+      number: "04",
+    },
   },
 
   skills: {
@@ -56,13 +57,9 @@ export const portfolioData = {
       "PostgreSQL / Aurora",
       "ETL & ELT Pipelines",
       "Data Modeling",
-      "Database Migration"
+      "Database Migration",
     ],
-    infrastructure: [
-      "AWS Services",
-      "Terraform",
-      "Git"
-    ],
+    infrastructure: ["AWS Services", "Terraform", "Git"],
     web_development: [
       "React",
       "Next.js",
@@ -71,8 +68,8 @@ export const portfolioData = {
       "HTML",
       "CSS",
       "Bootstrap",
-      "Tailwind CSS"
-    ]
+      "Tailwind CSS",
+    ],
   },
 
   experience: [
@@ -81,8 +78,14 @@ export const portfolioData = {
       role: "Data Engineer",
       period: "Sep 2022 - Feb 2026",
       description:
-        "Built and optimized large-scale ETL pipelines, performed Oracle-to-PostgreSQL migrations, automated reconciliation and validation processes, and supported production data platforms handling high-volume workloads."
-    }
+        "Built and optimized large-scale ETL pipelines, performed Oracle-to-PostgreSQL migrations, automated reconciliation and validation processes, and supported production data platforms handling high-volume workloads.",
+    },
+    {
+      company: "IBS Software",
+      role: "Senior Data Engineer",
+      period: "Feb 2026 - Present",
+      description: "",
+    },
   ],
 
   projects: [
@@ -94,8 +97,8 @@ export const portfolioData = {
       techStack: ["React", "Bootstrap"],
       links: {
         project: "https://github.com/ShalvinShaji/gmm",
-        demo: "https://gmmhospital.netlify.app/"
-      }
+        demo: "https://gmmhospital.netlify.app/",
+      },
     },
     {
       id: 2,
@@ -105,8 +108,8 @@ export const portfolioData = {
       techStack: ["Next.js", "Tailwind CSS"],
       links: {
         project: "https://github.com/ShalvinShaji/athlo",
-        demo: "https://athlo.vercel.app/"
-      }
+        demo: "https://athlo.vercel.app/",
+      },
     },
     {
       id: 3,
@@ -116,8 +119,8 @@ export const portfolioData = {
       techStack: ["React", "Bootstrap"],
       links: {
         project: "#",
-        demo: "#"
-      }
-    }
-  ]
+        demo: "#",
+      },
+    },
+  ],
 };

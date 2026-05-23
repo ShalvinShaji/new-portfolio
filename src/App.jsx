@@ -6,10 +6,8 @@ import Preloader from './components/Preloader';
 
 // Lazy load heavy sections
 const Hero = lazy(() => import('./components/Hero'));
-const Projects = lazy(() => import('./components/Projects'));
 const About = lazy(() => import('./components/About'));
 const Experience = lazy(() => import('./components/Experience'));
-const Skills = lazy(() => import('./components/Skills'));
 
 function App() {
   const [loading, setLoading] = React.useState(true);
@@ -41,10 +39,8 @@ function App() {
           <LazyMotion features={domAnimation}>
             <Hero startAnimation={startAnim} />
           </LazyMotion>
-          {/* <Projects /> */}
           <About />
           <Experience />
-          <Skills />
         </Suspense>
       </main>
       <Footer />
