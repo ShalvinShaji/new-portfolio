@@ -88,7 +88,7 @@ const About = memo(() => {
                   <style>{`
                     .resume-btn svg rect.base{ stroke: rgba(255,255,255,0.08); stroke-width:1; stroke-linecap:butt }
                     .resume-btn svg rect.overlay{ stroke-dasharray: 264; stroke-dashoffset: 264; stroke-width:1; stroke-linecap:butt; stroke: transparent; transition: stroke-dashoffset 1200ms linear, stroke 220ms ease; }
-                    .resume-btn:hover svg rect.overlay{ stroke-dashoffset: 0; stroke: #dc2626; }
+                    .resume-btn:hover svg rect.overlay{ stroke-dashoffset: 0; stroke: #DC143C; }
                   `}</style>
                 </button>
                 {showResume && (
